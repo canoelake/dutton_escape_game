@@ -362,6 +362,35 @@ def confess(player):
 def bribe(player):
     """Player decides to bribe hunters and players fate is chosen by random draw of either
     death_in_woods or player is allowed to go to the_road()"""
+    loading()
+    print("YOU DECIDE TO BRIBE THE HUNTERS")
+    print("")
+    sleep(1)
+
+    bribeWithDict = {1:'Pack of Cigarettes', 2:'Your Boots', 3:'The Watch You Took With You'}
+    bribeDecider = random.randint(1,3)
+        
+    for bribeKey, bribeVal in bribeWithDict.items():
+        print(f"{bribeKey}: {bribeVal}")
+        print("")
+
+    bribeThemWith = int(input("What do you want to use to bribe them: "))
+    sleep(1.2)
+
+    print("You choose to bribe them with ", bribeWithDict.get(bribeThemWith))
+    sleep(3)
+
+    if bribeThemWith != bribeDecider:
+        print(" Sorry, you chose the wrong bribe.")
+        sleep(3)
+        death_in_woods(last_words)
+    else:
+        print("Thanks for ", bribeWithDict.get(bribeThemWith))
+        sleep(4)
+        print("We'll help you get to The Road.")
+        the_road(player)
+
+
 def random_fate():
     """This module is shared by the_bridge() and the_road(). It randomly chooses between 4 different scenarios:
     roadblock(), vehicle(), chopper(), or all_clear()."""
@@ -524,4 +553,4 @@ def loading():
 
 #welcome(player, lawyers_name)
 
-confess(player)
+bribe(player)
