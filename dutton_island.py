@@ -76,7 +76,7 @@ def welcome(player, lawyers_name):
         sleep(1)
         print("Loading...............")
         sleep(2)
-        escape_choice()
+        escape_day()
     elif proceed == "N" or proceed == "n":
         print("I'm not sure sure you made the right choice!")
         sleep(3)
@@ -85,9 +85,33 @@ def welcome(player, lawyers_name):
         print("Invalid Entry. Exiting.")
         sleep(1)
         exit()
+def escape_day(player, lawyers_name):
+    loading()
+    print("ESCAPE DAY")
+    print("")
+    sleep(2)
+    print(f"Guard: Hey {player}. {lawyers_name} paid me $1000 bucks to leave this door open.")
+    sleep(3)
+    print(f"Do whatever you want. But, if you get caught. I had nothing to do with this. Good luck!")
+    sleep(3)
+    loading()
+    print("The door is open and there is no one else around.")
+    sleep(3)
+    print("It looks like there are 4 paths that you could take.")
+    sleep(3)
+    print("1: THE WOODS")
+    sleep(2)
+    print("2: THE BRIDGE")
+    sleep(2)
+    print("3: THE ROAD")
+    sleep(2)
+    print("4: THE SHORELINE")
+    escape_choice(player, lawyers_name)
 
-def escape_choice():
+    
+def escape_choice(player, lawyers_name):
     """Give 4 options for player to choose escape path"""
+
     print("choice")
 def the_woods():
     """The woods escape storyline. The player spots hunters"""
@@ -302,5 +326,6 @@ def loading():
 
 
 #welcome(player, lawyers_name)
+
 
 
