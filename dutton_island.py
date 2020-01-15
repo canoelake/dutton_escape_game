@@ -142,9 +142,28 @@ def random_fate():
     roadblock(), vehicle(), chopper(), or all_clear()."""
 def roadblock():
     """Player runs into a road block. It's the end of the line. Player will either be shot() or captured()."""
-def shot():
+def shot(last_words):
     """Player is shot"""
-    
+    loading()
+    print("BANG!")
+    sleep(2)
+    print("As you approach, they start shooting.")
+    sleep(2)
+    print("BANG! BANG!")
+    sleep(3)
+    print("You shout. I'm unarmed. I surrender!")
+    sleep(3)
+    print("BANG! BANG! BANG!")
+    sleep(4)
+    print("It's too late. You clutch your side and fall to the ground.")
+    sleep(6)
+    print("Eveything is quiet now.")
+    sleep(4)
+    print("As you look to the sky and your eyes slowly close. You whisper: ")
+    sleep(4)
+    print(f"{last_words}")
+    sleep(6)
+    credits()
 
 def captured():
     """Player is captured"""
@@ -267,5 +286,6 @@ def loading():
     sleep(2)
 
 
-welcome(player, lawyers_name)
+#welcome(player, lawyers_name)
+
 
