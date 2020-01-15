@@ -297,12 +297,6 @@ def lie(player):
         sleep(2)
         lie(player)
 
-
-
-
-
-def random_lie():
-    """Module randomly chooses between either death_in_woods() or shoreline storyline"""
 def death_in_woods(last_words):
     """Player dies in woods"""
     loading()
@@ -328,8 +322,9 @@ def death_in_woods(last_words):
 def confess(player):
     """Scene where player confesses that they are escaped con. Will call random_confess() to decide
     players fate"""
-def random_confess():
-    """Player confesses and game will choose between death_in_woods, bridge or road."""
+    
+
+
 def bribe(player):
     """Player decides to bribe hunters and players fate is chosen by random draw of either
     death_in_woods or player is allowed to go to the_road()"""
