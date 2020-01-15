@@ -1,12 +1,13 @@
-import time
+from os import system
+from time import sleep
 from sys import exit
 
-time.sleep(1)
+sleep(1)
 print("")
 print("Welcome to Dutton Island - A Choose Your Adventure Game by Gregory Brown")
-time.sleep(2)
+sleep(2)
 print("Loading...............")
-time.sleep(3)
+sleep(3)
 print("")
 print("")
 print("Let me get some player information:")
@@ -17,15 +18,17 @@ crime = input("Name a crime: ")
 lawyers_name = input("Give the name of your lawyer: ")
 happy_words = input("What do you say when you're really happy?: ")
 last_words = input("What would you like your last words to be?: ")
-
+print("Loading...............")
+sleep(1.2)
+system('clear')
 
 def welcome(player, lawyers_name):
     """Game welcome screen"""
     #Game Loading Screen
     print("")
-    time.sleep(3)
+    sleep(3)
     print("Loading................")
-    time.sleep(3)
+    sleep(3)
     print("")
     print("")
     print("SCENE 1 - Dutton Island Prison - Visitor's Room")
@@ -33,33 +36,34 @@ def welcome(player, lawyers_name):
 
     #Opening Dialogue
     print(f"{lawyers_name}: Hey, {player} ! \n{lawyers_name}: I know you've been wrongfully imprisoned for 5 years on Dutton Island")
-    time.sleep(4)
+    sleep(4)
     print(f"{player}: Listen {lawyers_name}, you know that I was framed. I'm losing my mind in here! How's the final appeal coming?")
     print(f"{lawyers_name}: I'm sorry {player}, It looks like you will be executed in a week.")
-    time.sleep(4)
+    sleep(3)
     print(f"{player}: What do you mean?")
-    time.sleep(4)
+    sleep(4)
     print(f"{lawyers_name}: {player}, The system is corrupt and there's only a 1 % chance that they will even allow an appeal.")
-    time.sleep(5)
+    sleep(5)
     print(f"{player}: So, {lawyers_name}, what choice do I have.")
-    time.sleep(3)
+    sleep(3)
     print(f"{lawyers_name}: {player}, It's really risky. But, I think your only option is .......")
-    time.sleep(5)
+    sleep(5)
     print(f"{lawyers_name}: Escape")
-    time.sleep(1)
+    sleep(1)
     print(f"{player}: How?")
-    time.sleep(1.5)
+    sleep(1.5)
     print(f"Guard: Visiting time is over!")
-    time.sleep(3)
+    sleep(3)
     print(f"{lawyers_name}: Tomorrow, during your work placement. I've paid one of the guards to leave the door open.")
     print("Once the way is clear. come closer. Take the.....")
-    time.sleep(5)
+    sleep(5.2)
     print(f"Guard: That's it guys. Time's Up. {player}, back to your cell.")
     print("")
     print("END OF SCENE 1")
     
     #Option to continue game or to exit
-    time.sleep(6)
+    sleep(6)
+    system('clear')
     print("")
     print("Even though you didn't hear the end of the message. Do you risk it? Or, will you stay and probably be executed?")
     print("")
@@ -69,17 +73,17 @@ def welcome(player, lawyers_name):
     proceed = input("Do you want to proceed? ")
     if proceed == "Y" or proceed == "y":
         print(f"Good Luck {player}!")
-        time.sleep(1)
+        sleep(1)
         print("Loading...............")
-        time.sleep(2)
+        sleep(2)
         escape_choice()
     elif proceed == "N" or proceed == "n":
-        print("I'm nto sure sure you made the right choice!")
-        time.sleep(3)
+        print("I'm not sure sure you made the right choice!")
+        sleep(3)
         recaptured()
     else:
         print("Invalid Entry. Exiting.")
-        time.sleep(1)
+        sleep(1)
         exit()
 
 def escape_choice():
@@ -180,9 +184,9 @@ def win(player):
                 print("* %s "%line+' '*half_dif+'*')    
 
         print("*%s*"%dash)
-    time.sleep(3)
+    sleep(3)
     border_msg(f'Congratulations {player}\nYou Have Escaped Dutton Island\n You Are The Best!')
-    time.sleep(5)
+    sleep(5)
     credits()
 
 def recaptured():
@@ -190,35 +194,35 @@ def recaptured():
     print("This is recaptured")
 def death_penalty():
     """Death penalty ending storyline"""
-    time.sleep(0.5)
+    sleep(0.5)
     print("")
     print("There will be no mercy.")
     print("You have been sentenced to death by firing squad.")
-    time.sleep(1)
+    sleep(1)
     print("May Darwin have mercy on your soul.")
-    time.sleep(3)
+    sleep(3)
     credits()
 
 def life(player):
     """Life imprisonment ending storyline."""
-    time.sleep(0.5)
+    sleep(0.5)
     print("")
     print("The Judge is deliberating.....")
-    time.sleep(1.2)
+    sleep(1.2)
     print(f"{player}, you have been sentenced to life in prison without possibility of parole.")
-    time.sleep(3)
+    sleep(3)
     credits()
 
 def parole():
     """15 years with parole after 5 years storyline."""
-    time.sleep(0.5)
+    sleep(0.5)
     print("")
     print("The judge is deliberating......")
-    time.sleep(1.5)
+    sleep(1.5)
     print("The court will be lenient in these matters.")
-    time.sleep(0.5)
+    sleep(0.5)
     print("I sentence you to 15 years in prison. However, if you are a model prisoner, you'll be out in 5 years")
-    time.sleep(3)
+    sleep(3)
     credits()
 
 def raft_challenge_1():
