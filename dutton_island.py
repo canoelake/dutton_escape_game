@@ -166,6 +166,15 @@ def recaptured():
     print("This is recaptured")
 def death_penalty():
     """Death penalty ending storyline"""
+    time.sleep(0.5)
+    print("")
+    print("There will be no mercy.")
+    print("You have been sentenced to death by firing squad.")
+    time.sleep(1)
+    print("May Darwin have mercy on your soul.")
+    time.sleep(3)
+    credits()
+    
 def life(player):
     """Life imprisonment ending storyline."""
     time.sleep(0.5)
@@ -178,6 +187,16 @@ def life(player):
 
 def parole():
     """15 years with parole after 5 years storyline."""
+    time.sleep(0.5)
+    print("")
+    print("The judge is deliberating......")
+    time.sleep(1.5)
+    print("The court will be lenient in these matters.")
+    time.sleep(0.5)
+    print("I sentence you to 15 years in prison. However, if you are a model prisoner, you'll be out in 5 years")
+    time.sleep(3)
+    credits()
+
 def raft_challenge_1():
     """First of 3 challenges for choosing to raft. If fail call collapse()"""
 def raft_challenge_2():
