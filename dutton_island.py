@@ -159,8 +159,32 @@ def payphone():
     """Player get's in payphone and must complete last_boss() to win."""
 def last_boss():
     """Player has 3 chances to complete challenge to win() or be recaptured()."""
-def win():
+def win(player):
     """Winning module"""
+    print("")
+    
+    def border_msg(msg):
+        msg_lines=msg.split('\n')
+        max_length=max([len(line) for line in msg_lines])
+        count = max_length +2 
+
+        dash = "*"*count 
+
+        print("*%s*" %dash)
+
+        for line in msg_lines:
+            half_dif=(max_length-len(line))
+            if half_dif==0:
+                print("* %s *"%line)
+            else:
+                print("* %s "%line+' '*half_dif+'*')    
+
+        print("*%s*"%dash)
+    time.sleep(3)
+    border_msg(f'Congratulations {player}\nYou Have Escaped Dutton Island\n You Are The Best!')
+    time.sleep(5)
+    credits()
+
 def recaptured():
     """Player is recaptured. A random choice is made whether: death penalty, life, or 15 yrs with paraole in 5."""
     print("This is recaptured")
@@ -174,7 +198,7 @@ def death_penalty():
     print("May Darwin have mercy on your soul.")
     time.sleep(3)
     credits()
-    
+
 def life(player):
     """Life imprisonment ending storyline."""
     time.sleep(0.5)
@@ -212,8 +236,5 @@ def credits():
     
 
 
-#welcome(player, lawyers_name)
-credits()
-print("")
-life(player)
+welcome(player, lawyers_name)
 
