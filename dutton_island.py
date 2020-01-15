@@ -1,7 +1,90 @@
-def welcome():
+import time
+from sys import exit
+
+time.sleep(1)
+print("")
+print("Welcome to Dutton Island - A Choose Your Adventure Game by Gregory Brown")
+time.sleep(2)
+print("Loading...............")
+time.sleep(3)
+print("")
+print("")
+print("Let me get some player information:")
+print("")
+print("")
+player = input("Please Enter Character Name: ")
+crime = input("Name a crime: ")
+lawyers_name = input("Give the name of your lawyer: ")
+happy_words = input("What do you say when you're really happy?: ")
+last_words = input("What would you like your last words to be?: ")
+
+
+def welcome(player, lawyers_name):
     """Game welcome screen"""
+    #Game Loading Screen
+    print("")
+    time.sleep(3)
+    print("Loading................")
+    time.sleep(3)
+    print("")
+    print("")
+    print("SCENE 1 - Dutton Island Prison - Visitor's Room")
+    print("")
+
+    #Opening Dialogue
+    print(f"{lawyers_name}: Hey, {player} ! \n{lawyers_name}: I know you've been wrongfully imprisoned for 5 years on Dutton Island")
+    time.sleep(4)
+    print(f"{player}: Listen {lawyers_name}, you know that I was framed. I'm losing my mind in here! How's the final appeal coming?")
+    print(f"{lawyers_name}: I'm sorry {player}, It looks like you will be executed in a week.")
+    time.sleep(4)
+    print(f"{player}: What do you mean?")
+    time.sleep(4)
+    print(f"{lawyers_name}: {player}, The system is corrupt and there's only a 1 % chance that they will even allow an appeal.")
+    time.sleep(5)
+    print(f"{player}: So, {lawyers_name}, what choice do I have.")
+    time.sleep(3)
+    print(f"{lawyers_name}: {player}, It's really risky. But, I think your only option is .......")
+    time.sleep(5)
+    print(f"{lawyers_name}: Escape")
+    time.sleep(1)
+    print(f"{player}: How?")
+    time.sleep(1.5)
+    print(f"Guard: Visiting time is over!")
+    time.sleep(3)
+    print(f"{lawyers_name}: Tomorrow, during your work placement. I've paid one of the guards to leave the door open.")
+    print("Once the way is clear. come closer. Take the.....")
+    time.sleep(5)
+    print(f"Guard: That's it guys. Time's Up. {player}, back to your cell.")
+    print("")
+    print("END OF SCENE 1")
+    
+    #Option to continue game or to exit
+    time.sleep(6)
+    print("")
+    print("Even though you didn't hear the end of the message. Do you risk it? Or, will you stay and probably be executed?")
+    print("")
+    
+
+    # checks for user input if they want to proceed
+    proceed = input("Do you want to proceed? ")
+    if proceed == "Y" or proceed == "y":
+        print(f"Good Luck {player}!")
+        time.sleep(1)
+        print("Loading...............")
+        time.sleep(2)
+        escape_choice()
+    elif proceed == "N" or proceed == "n":
+        print("I'm nto sure sure you made the right choice!")
+        time.sleep(3)
+        recaptured()
+    else:
+        print("Invalid Entry. Exiting.")
+        time.sleep(1)
+        exit()
+
 def escape_choice():
     """Give 4 options for player to choose escape path"""
+    print("choice")
 def the_woods():
     """The woods escape storyline. The player spots hunters"""
 def the_bridge():
@@ -80,6 +163,7 @@ def win():
     """Winning module"""
 def recaptured():
     """Player is recaptured. A random choice is made whether: death penalty, life, or 15 yrs with paraole in 5."""
+    print("This is recaptured")
 def death_penalty():
     """Death penalty ending storyline"""
 def life():
@@ -93,6 +177,5 @@ def raft_challenge_2():
 def raft_challenge_3():
     """Last raft challenge. Completing gets player to other_side(). Failure, too close to shore, recaptured()."""
 
-
-
+welcome(player, lawyers_name)
 
