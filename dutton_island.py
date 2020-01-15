@@ -2,6 +2,11 @@ import random
 from os import system
 from time import sleep
 from sys import exit
+# player ="test player"
+# crime = "test crime"
+# lawyers_name ="Test lawyer"
+# happy_words = "I am happy"
+# last_words = "This is my last word"
 
 sleep(1)
 print("")
@@ -168,7 +173,7 @@ def the_road():
     loading()
     location = "the road"
     print("The Road")
-def the_shoreline():
+def the_shoreline(player):
     """The shoreline storyline. Player finds a canoe() and a raft()"""
     loading()
     location = "the shoreline"
@@ -243,17 +248,59 @@ def approach(player):
         lie(player)
     elif howToApproach == 2:
         confess(player)
-    elif howToApproach === 3:
+    elif howToApproach == 3:
         bribe(player)
     else:
         print("Forget it.")
         sleep(2)
         credits()
-        
 
 
-def lie():
+def lie(player):
     """If player decides to lie, the game calls random_lie to decide fate"""
+    loading()
+    print("You CHOSE TO LIE:")
+    print("")
+    sleep(2)
+
+    liesToTell = {1:"I'm just a fellow hunter who got lost in the woods.",
+    2: "I came to the island on a day trip.", 3:"I'm a geologist, I'm just collecting rocks."}
+
+    lieDetector = random.randint(1,3)
+
+    for lieKey, lieValue in liesToTell.items():
+        print(f"{lieKey}: {lieValue}")
+    
+    print("")
+    sleep(2)
+    print("What lie do you want to tell?")
+
+    theLieToUse = int(input('> '))
+    print("")
+    print(f"{player}: ", liesToTell.get(theLieToUse))
+    sleep(3.4)
+
+    if theLieToUse != lieDetector:
+        print("Hunters: We don't believe you. We heard about your escape. Jim, Grab him!")
+        sleep(5)
+        lie(player)
+        death_in_woods(last_words)
+    elif theLieToUse == lieDetector:
+        print("Hunters: That sounds reasonable. How can we help?")
+        print("")
+        sleep(3.6)
+        print(f"{player}: Take me to the shoreline.")
+        sleep(4)
+        the_shoreline(player)
+    else:
+        print("Come on man. Please read instructions.")
+        sleep(2)
+        lie(player)
+
+
+
+
+
 def random_lie():
     """Module randomly chooses between either death_in_woods() or shoreline storyline"""
 def death_in_woods(last_words):
@@ -263,7 +310,7 @@ def death_in_woods(last_words):
     sleep(2)
     print("You are alone now in the woods.")
     sleep(2)
-    print("You feel a warm liquid pouring down you face.")
+    print("You feel a warm liquid pouring down your face.")
     sleep(2.5)
     print("You must have been hit in the head.")
     sleep(2.9)
@@ -278,12 +325,12 @@ def death_in_woods(last_words):
     system('clear')
     sleep(1)
     credits()
-def confess():
+def confess(player):
     """Scene where player confesses that they are escaped con. Will call random_confess() to decide
     players fate"""
 def random_confess():
     """Player confesses and game will choose between death_in_woods, bridge or road."""
-def bribe():
+def bribe(player):
     """Player decides to bribe hunters and players fate is chosen by random draw of either
     death_in_woods or player is allowed to go to the_road()"""
 def random_fate():
@@ -448,5 +495,4 @@ def loading():
 
 #welcome(player, lawyers_name)
 
-approach(player)
 
