@@ -93,12 +93,16 @@ def the_woods():
     """The woods escape storyline. The player spots hunters"""
 def the_bridge():
     """The bridge escape storyline. One of four random_fate() will be chosen for the player"""
+    location = "the bridge"
 def the_road():
     """The road storyline. One of four random_fate() will be chosen for the player."""
+    location = "the road"
 def the_shoreline():
     """The shoreline storyline. Player finds a canoe() and a raft()"""
+    location = "the shoreline"
 def hunters():
     """Player runs into hunters"""
+    location = "the hunters"
 def hunters_choice():
     """Decide to run back to choice or approach hunters"""
 def approach():
@@ -180,8 +184,19 @@ def chopper():
 def chopper_chance():
     """In this module player has to guess a number and if within 1 digit of the number,
     player gets to go back to woods(); or else player gets chased into roadblock()"""
-def all_clear():
+def all_clear(location):
     """All is clear for player.  module calls shoreline()"""
+    loading()
+    print(f"You slowly decide to approach {location}.")
+    sleep(3)
+    print(f"There are vehicles on {location}.")
+    sleep(3)
+    print("You decide to hide until nightfall.")
+    sleep(4)
+    print(f"Its dark now. You haven't seen any movement on {location} for the last 2 hours.")
+    sleep(4)
+    print(f"You decide that your best move now is to follow {location} to the shoreline.")
+    sleep(2)
 def canoe():
     """Part of the shoreline() storyline. Player chooses canoe. And, then has a choice of going south() or north()"""
 def raft():
