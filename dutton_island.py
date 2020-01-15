@@ -2,31 +2,31 @@ import random
 from os import system
 from time import sleep
 from sys import exit
-# player ="test player"
-# crime = "test crime"
-# lawyers_name ="Test lawyer"
-# happy_words = "I am happy"
-# last_words = "This is my last word"
+player ="test player"
+crime = "test crime"
+lawyers_name ="Test lawyer"
+happy_words = "I am happy"
+last_words = "This is my last word"
 
-sleep(1)
-print("")
-print("Welcome to Dutton Island - A Choose Your Adventure Game by Gregory Brown")
-sleep(2)
-print("Loading...............")
-sleep(3)
-print("")
-print("")
-print("Let me get some player information:")
-print("")
-print("")
-player = input("Please Enter Character Name: ")
-crime = input("Name a crime: ")
-lawyers_name = input("Give the name of your lawyer: ")
-happy_words = input("What do you say when you're really happy?: ")
-last_words = input("What would you like your last words to be?: ") #Players last words
-print("Loading...............")
-sleep(1.2)
-system('clear')
+# sleep(1)
+# print("")
+# print("Welcome to Dutton Island - A Choose Your Adventure Game by Gregory Brown")
+# sleep(2)
+# print("Loading...............")
+# sleep(3)
+# print("")
+# print("")
+# print("Let me get some player information:")
+# print("")
+# print("")
+# player = input("Please Enter Character Name: ")
+# crime = input("Name a crime: ")
+# lawyers_name = input("Give the name of your lawyer: ")
+# happy_words = input("What do you say when you're really happy?: ")
+# last_words = input("What would you like your last words to be?: ") #Players last words
+# print("Loading...............")
+# sleep(1.2)
+# system('clear')
 
 def welcome(player, lawyers_name):
     """Game welcome screen"""
@@ -163,12 +163,12 @@ def the_woods():
     
     hunters()
 
-def the_bridge():
+def the_bridge(player):
     """The bridge escape storyline. One of four random_fate() will be chosen for the player"""
     loading()
     location = "the bridge"
     print("The Bridge")
-def the_road():
+def the_road(player):
     """The road storyline. One of four random_fate() will be chosen for the player."""
     loading()
     location = "the road"
@@ -322,8 +322,42 @@ def death_in_woods(last_words):
 def confess(player):
     """Scene where player confesses that they are escaped con. Will call random_confess() to decide
     players fate"""
-    
+    loading()
+    print("YOU DECIDE TO CONFESS")
+    print("")
+    sleep(1)
 
+    confesseeDict = {1:'Joe', 2:'The Bearded Woman', 3:'The Ugly Fellow in the corner'}
+    confessDecider = random.randint(1,3)
+    randomConfessPath = random.randint(1,2)
+    
+    for confesseeKey, confesseeVal in confesseeDict.items():
+        print(f"{confesseeKey}: {confesseeVal}")
+        print("")
+
+    confessTo = int(input("Who do you want to confess to: "))
+    sleep(1.2)
+
+    print("You choose to confess to ", confesseeDict.get(confessTo))
+    sleep(3)
+
+    if confessTo != confessDecider:
+        print(" Sorry, you chose the wrong person to confess to.")
+        sleep(3)
+        death_in_woods(last_words)
+    elif randomConfessPath == 1:
+        print("Thanks for being honest. We will help you get to The Bridge.")
+        sleep(6)
+        the_bridge(player)
+    elif randomConfessPath == 2:
+        print("We are a crazy religous cult and like honesty. We will excort you to The Road.")
+        sleep(6)
+        the_road(player)
+    else:
+        print("You can't take instructions.")
+        sleep(1)
+        credits()
+    
 
 def bribe(player):
     """Player decides to bribe hunters and players fate is chosen by random draw of either
@@ -490,4 +524,4 @@ def loading():
 
 #welcome(player, lawyers_name)
 
-
+confess(player)
