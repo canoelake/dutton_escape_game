@@ -1,3 +1,4 @@
+import random
 from os import system
 from time import sleep
 from sys import exit
@@ -98,13 +99,9 @@ def escape_day(player, lawyers_name):
     print("The door is open and there is no one else around.")
     sleep(3)
     print("It looks like there are 4 paths that you could take.")
-    sleep(3)
     print("1: THE WOODS")
-    sleep(2)
     print("2: THE BRIDGE")
-    sleep(2)
     print("3: THE ROAD")
-    sleep(2)
     print("4: THE SHORELINE")
     escape_choice(player, lawyers_name)
 
@@ -178,12 +175,83 @@ def the_shoreline():
     print("The Shoreline")
 def hunters():
     """Player runs into hunters"""
+    loading()
     location = "the hunters"
-    print("Hey, I'm hunter")
+    print("THE HUNTERS")
+    print("")
+    sleep(2)
+    print("You've been holed in this cave all night. The hunters aren't leaving anytime soon. ")
+    sleep(3)
+    print("You're hungry and thirsty. What do you do?")
+    hunters_choice()
+    
 def hunters_choice():
-    """Decide to run back to choice or approach hunters"""
-def approach():
+    """Decide to run back or approach hunters"""
+    loading()
+    print("")
+    print("Do you want to run or approach?")
+    sleep(1)
+    print("1: RUN \t\t2: APPROACH")
+
+    decisionWithHunters = int(input('> '))
+
+    if decisionWithHunters == 1:
+        sleep(1)
+        print("You decide that the woods are too dangerous.")
+        sleep(1)
+        print("You wait until hunters are asleep and back track to choose a different path.")
+        escape_choice(player, lawyers_name)
+    elif decisionWithHunters == 2:
+        sleep(1)
+        print("You decide to approach the hunters.")
+        sleep(3)
+        approach(player)
+    else:
+        hunters()
+
+def approach(player):
     """Approach module, player has to decide to lie, confess, or bribe the hunters"""
+    loading()
+    print("THE APPROACH")
+    print("")
+    approachGreeting = ['Hello there', 'Wazz upppp', "What's happening home slice"]
+    approachResponse = ['What do you want?', 'Let me see your hands', 'On your knees now.']
+
+    approachChoices = {1:"Lie", 2:"Tell the Truth", 3:"Bribe"}
+
+    print(f"{player}: ", random.choice(approachGreeting))
+    sleep(2.5)
+    print("Hunters: ", random.choice(approachResponse))
+    sleep(2.5)
+    print("")
+    print("How do you respond?")
+    sleep(2.5)
+    print("")
+
+    print(approachChoices)
+    print("")
+    howToApproach = int(input('> '))
+
+    if howToApproach in approachChoices:
+        print("You chose to :", end=' ')
+        print(approachChoices.get(howToApproach))
+    else:
+        print("Incorrect selection")
+        approach(player)
+    
+    if howToApproach == 1:
+        lie(player)
+    elif howToApproach == 2:
+        confess(player)
+    elif howToApproach === 3:
+        bribe(player)
+    else:
+        print("Forget it.")
+        sleep(2)
+        credits()
+        
+
+
 def lie():
     """If player decides to lie, the game calls random_lie to decide fate"""
 def random_lie():
@@ -378,7 +446,7 @@ def loading():
     sleep(2)
 
 
-welcome(player, lawyers_name)
+#welcome(player, lawyers_name)
 
-
+approach(player)
 
