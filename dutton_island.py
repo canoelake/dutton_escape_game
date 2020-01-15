@@ -76,7 +76,7 @@ def welcome(player, lawyers_name):
         sleep(1)
         print("Loading...............")
         sleep(2)
-        escape_day()
+        escape_day(player, lawyers_name)
     elif proceed == "N" or proceed == "n":
         print("I'm not sure sure you made the right choice!")
         sleep(3)
@@ -108,22 +108,58 @@ def escape_day(player, lawyers_name):
     print("4: THE SHORELINE")
     escape_choice(player, lawyers_name)
 
-    
+
 def escape_choice(player, lawyers_name):
     """Give 4 options for player to choose escape path"""
+    loading()
+    print("Where do you want to go?")
+    print("")
+    sleep(2)
+    print("1: THE WOODS")
+    sleep(2)
+    print("2: THE BRIDGE")
+    sleep(2)
+    print("3: THE ROAD")
+    sleep(2)
+    print("4: THE SHORELINE")
 
-    print("choice")
+    print("")
+
+    choice = int(input('Write the number of your choice. Then hit enter: '))
+
+    if choice == 1 :
+        the_woods()
+    elif choice == 2 :
+        the_bridge()
+    elif choice == 3 :
+        the_road()
+    elif choice == 4:
+        the_shoreline
+    else:
+        print("Sleep it off and try again later")
+        sleep(3)
+        credits()
+    
 def the_woods():
     """The woods escape storyline. The player spots hunters"""
+    loading()
+    location = "the woods"
+    print("The woods")
 def the_bridge():
     """The bridge escape storyline. One of four random_fate() will be chosen for the player"""
+    loading()
     location = "the bridge"
+    print("The Bridge")
 def the_road():
     """The road storyline. One of four random_fate() will be chosen for the player."""
+    loading()
     location = "the road"
+    print("The Road")
 def the_shoreline():
     """The shoreline storyline. Player finds a canoe() and a raft()"""
+    loading()
     location = "the shoreline"
+    print("The Shoreline")
 def hunters():
     """Player runs into hunters"""
     location = "the hunters"
@@ -325,7 +361,7 @@ def loading():
     sleep(2)
 
 
-#welcome(player, lawyers_name)
+welcome(player, lawyers_name)
 
 
 
