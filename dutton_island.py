@@ -109,10 +109,7 @@ def random_lie():
     """Module randomly chooses between either death_in_woods() or shoreline storyline"""
 def death_in_woods(last_words):
     """Player dies in woods"""
-    print("Loading........")
-    sleep(1.5)
-    system('clear')
-    sleep(2)
+    loading()
     print("Everything goes dark.")
     sleep(2)
     print("You are alone now in the woods.")
@@ -147,6 +144,8 @@ def roadblock():
     """Player runs into a road block. It's the end of the line. Player will either be shot() or captured()."""
 def shot():
     """Player is shot"""
+    
+
 def captured():
     """Player is captured"""
 def vehicle():
@@ -188,6 +187,7 @@ def last_boss():
     """Player has 3 chances to complete challenge to win() or be recaptured()."""
 def win(player):
     """Winning module"""
+    loading()
     print("")
     
     def border_msg(msg):
@@ -217,7 +217,7 @@ def recaptured():
     print("This is recaptured")
 def death_penalty():
     """Death penalty ending storyline"""
-    sleep(0.5)
+    loading()
     print("")
     print("There will be no mercy.")
     print("You have been sentenced to death by firing squad.")
@@ -228,7 +228,7 @@ def death_penalty():
 
 def life(player):
     """Life imprisonment ending storyline."""
-    sleep(0.5)
+    loading()
     print("")
     print("The Judge is deliberating.....")
     sleep(1.2)
@@ -238,7 +238,7 @@ def life(player):
 
 def parole():
     """15 years with parole after 5 years storyline."""
-    sleep(0.5)
+    loading()
     print("")
     print("The judge is deliberating......")
     sleep(1.5)
@@ -260,8 +260,12 @@ def credits():
     print("Concept and coding by Gregory Brown")
     print("Created to demonstrate beginner level competency in Python")
     print("January 2020")
-    
+def loading():
+    print("Loading................")
+    sleep(1.5)
+    system('clear')
+    sleep(2)
 
 
-#welcome(player, lawyers_name)
-death_in_woods(last_words)
+welcome(player, lawyers_name)
+
