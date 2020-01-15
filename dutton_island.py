@@ -166,8 +166,16 @@ def recaptured():
     print("This is recaptured")
 def death_penalty():
     """Death penalty ending storyline"""
-def life():
+def life(player):
     """Life imprisonment ending storyline."""
+    time.sleep(0.5)
+    print("")
+    print("The Judge is deliberating.....")
+    time.sleep(1.2)
+    print(f"{player}, you have been sentenced to life in prison without possibility of parole.")
+    time.sleep(3)
+    credits()
+
 def parole():
     """15 years with parole after 5 years storyline."""
 def raft_challenge_1():
@@ -176,6 +184,17 @@ def raft_challenge_2():
     """Second of 3 challenges for choosing to raft. If fail call collapse()"""
 def raft_challenge_3():
     """Last raft challenge. Completing gets player to other_side(). Failure, too close to shore, recaptured()."""
+def credits():
+    print("")
+    print("Escape from Dutton Island")
+    print("Concept and coding by Gregory Brown")
+    print("Created to demonstrate beginner level competency in Python")
+    print("January 2020")
+    
 
-welcome(player, lawyers_name)
+
+#welcome(player, lawyers_name)
+credits()
+print("")
+life(player)
 
