@@ -2,31 +2,31 @@ import random
 from os import system
 from time import sleep
 from sys import exit
-player ="test player"
-crime = "test crime"
-lawyers_name ="Test lawyer"
-happy_words = "I am happy"
-last_words = "This is my last word"
+# player ="test player"
+# crime = "test crime"
+# lawyers_name ="Test lawyer"
+# happy_words = "I am happy"
+# last_words = "This is my last word"
 
-# sleep(1)
-# print("")
-# print("Welcome to Dutton Island - A Choose Your Adventure Game by Gregory Brown")
-# sleep(2)
-# print("Loading...............")
-# sleep(3)
-# print("")
-# print("")
-# print("Let me get some player information:")
-# print("")
-# print("")
-# player = input("Please Enter Character Name: ")
-# crime = input("Name a crime: ")
-# lawyers_name = input("Give the name of your lawyer: ")
-# happy_words = input("What do you say when you're really happy?: ")
-# last_words = input("What would you like your last words to be?: ") #Players last words
-# print("Loading...............")
-# sleep(1.2)
-# system('clear')
+sleep(1)
+print("")
+print("Welcome to Dutton Island - A Choose Your Adventure Game by Gregory Brown")
+sleep(2)
+print("Loading...............")
+sleep(3)
+print("")
+print("")
+print("Let me get some player information:")
+print("")
+print("")
+player = input("Please Enter Character Name: ")
+crime = input("Name a crime: ")
+lawyers_name = input("Give the name of your lawyer: ")
+happy_words = input("What do you say when you're really happy?: ")
+last_words = input("What would you like your last words to be?: ") #Players last words
+print("Loading...............")
+sleep(1.2)
+system('clear')
 
 def welcome(player, lawyers_name):
     """Game welcome screen"""
@@ -79,7 +79,7 @@ def welcome(player, lawyers_name):
     proceed = input("Do you want to proceed? ")
     if proceed == "Y" or proceed == "y":
         print(f"Good Luck {player}!")
-        sleep(1)
+        sleep(1.2)
         print("Loading...............")
         sleep(2)
         escape_day(player, lawyers_name)
@@ -108,6 +108,7 @@ def escape_day(player, lawyers_name):
     print("2: THE BRIDGE")
     print("3: THE ROAD")
     print("4: THE SHORELINE")
+    sleep(5)
     escape_choice(player, lawyers_name)
 
 
@@ -185,9 +186,10 @@ def hunters():
     print("THE HUNTERS")
     print("")
     sleep(2)
-    print("You've been holed in this cave all night. The hunters aren't leaving anytime soon. ")
+    print("You've been holed up in this cave all night. The hunters aren't leaving anytime soon. ")
     sleep(3)
     print("You're hungry and thirsty. What do you do?")
+    sleep(5)
     hunters_choice()
     
 def hunters_choice():
@@ -236,6 +238,7 @@ def approach(player):
     print(approachChoices)
     print("")
     howToApproach = int(input('> '))
+    sleep(5)
 
     if howToApproach in approachChoices:
         print("You chose to :", end=' ')
@@ -551,6 +554,5 @@ def loading():
     sleep(2)
 
 
-#welcome(player, lawyers_name)
+welcome(player, lawyers_name)
 
-bribe(player)
