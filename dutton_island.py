@@ -17,7 +17,7 @@ player = input("Please Enter Character Name: ")
 crime = input("Name a crime: ")
 lawyers_name = input("Give the name of your lawyer: ")
 happy_words = input("What do you say when you're really happy?: ")
-last_words = input("What would you like your last words to be?: ")
+last_words = input("What would you like your last words to be?: ") #Players last words
 print("Loading...............")
 sleep(1.2)
 system('clear')
@@ -107,8 +107,31 @@ def lie():
     """If player decides to lie, the game calls random_lie to decide fate"""
 def random_lie():
     """Module randomly chooses between either death_in_woods() or shoreline storyline"""
-def death_in_woods():
+def death_in_woods(last_words):
     """Player dies in woods"""
+    print("Loading........")
+    sleep(1.5)
+    system('clear')
+    sleep(2)
+    print("Everything goes dark.")
+    sleep(2)
+    print("You are alone now in the woods.")
+    sleep(2)
+    print("You feel a warm liquid pouring down you face.")
+    sleep(2.5)
+    print("You must have been hit in the head.")
+    sleep(2.9)
+    print("You try to move. But you can't")
+    sleep(2.5)
+    print("You realize that this is it. This is how it ends.")
+    sleep(2.6)
+    print("You close your eyes and whisper: ")
+    sleep(3.5)
+    print(f"{last_words}")
+    sleep(4.3)
+    system('clear')
+    sleep(1)
+    credits()
 def confess():
     """Scene where player confesses that they are escaped con. Will call random_confess() to decide
     players fate"""
@@ -240,5 +263,5 @@ def credits():
     
 
 
-welcome(player, lawyers_name)
-
+#welcome(player, lawyers_name)
+death_in_woods(last_words)
