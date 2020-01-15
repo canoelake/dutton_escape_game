@@ -144,7 +144,23 @@ def the_woods():
     """The woods escape storyline. The player spots hunters"""
     loading()
     location = "the woods"
-    print("The woods")
+    print("THE WOODS")
+    print("")
+    sleep(2)
+    print("You travelled all day and all night.")
+    sleep(2.5)
+    print("You're now deep in the woods.")
+    sleep(2.5)
+    print("You find a small cave hidden away and decide to rest.")
+    sleep(4)
+    print("BANG!")
+    sleep(2.5)
+    print("You jolt awake at the sound. It's already dark. You must have slept most of the day.")
+    sleep(4)
+    print("A group of hunters have set up camp for the night. You've got some decisions to make.")
+    
+    hunters()
+
 def the_bridge():
     """The bridge escape storyline. One of four random_fate() will be chosen for the player"""
     loading()
@@ -163,6 +179,7 @@ def the_shoreline():
 def hunters():
     """Player runs into hunters"""
     location = "the hunters"
+    print("Hey, I'm hunter")
 def hunters_choice():
     """Decide to run back to choice or approach hunters"""
 def approach():
