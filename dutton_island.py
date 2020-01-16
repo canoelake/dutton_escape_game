@@ -419,6 +419,24 @@ def bribe(player):
 def random_fate():
     """This module is shared by the_bridge() and the_road(). It randomly chooses between 4 different scenarios:
     roadblock(), vehicle(), chopper(), or all_clear()."""
+    fateRandom = random.randint(1,5)
+    location = "the bridge via the road"
+    
+    if fateRandom == 1:
+        roadblock()
+    elif fateRandom == 2:
+        vehicle()
+    elif fateRandom == 3:
+        all_clear(location)
+    elif fateRandom == 4:
+        chopper()
+    elif fateRandom == 5:
+        all_clear(location)
+    else:
+        print("This is too hard. Quitting.")
+        sleep(2)
+        credits()
+
 def roadblock():
     """Player runs into a road block. It's the end of the line. Player will either be shot() or captured()."""
     loading()
