@@ -91,6 +91,7 @@ def welcome(player, lawyers_name):
         print("Invalid Entry. Exiting.")
         sleep(1)
         exit()
+
 def escape_day(player, lawyers_name):
     loading()
     print("ESCAPE DAY")
@@ -110,7 +111,6 @@ def escape_day(player, lawyers_name):
     print("4: THE SHORELINE")
     sleep(5)
     escape_choice(player, lawyers_name)
-
 
 def escape_choice(player, lawyers_name):
     """Give 4 options for player to choose escape path"""
@@ -200,7 +200,33 @@ def the_shoreline(player):
     """The shoreline storyline. Player finds a canoe() and a raft()"""
     loading()
     location = "the shoreline"
-    print("The Shoreline")
+    print("THE SHORELINE")
+    print("")
+    sleep(2)
+    print("You arrive at the shoreline and you see a conoe and a raft.")
+    sleep(3)
+    
+    print("Which one do you choose?")
+    print("1: Canoe \n2: Raft")
+    sleep(1)
+    shoreChoice = int(input('Enter 1 or 2: '))
+
+    if shoreChoice != 1 or shoreChoice ! = 2:
+        print('Read the instructions.')
+        print('Reloading.............')
+        sleep(2)
+        the_shoreline(player)
+    elif shoreChoice == 1:
+        sleep(2)
+        canoe()
+    elif shoreChoice == 2:
+        sleep(2)
+        raft()
+    else:
+        print("Exiting Game")
+        sleep(0.8)
+        credits()
+    
 def hunters():
     """Player runs into hunters"""
     loading()
@@ -344,6 +370,7 @@ def death_in_woods(last_words):
     system('clear')
     sleep(1)
     credits()
+
 def confess(player):
     """Scene where player confesses that they are escaped con. Will call random_confess() to decide
     players fate"""
@@ -532,7 +559,6 @@ def chopper():
         roadblock()
     
 
-
 def all_clear(location):
     """All is clear for player.  module calls shoreline()"""
     loading()
@@ -546,6 +572,7 @@ def all_clear(location):
     sleep(4)
     print(f"You decide that your best move now is to follow {location} to the shoreline.")
     sleep(2)
+
 def canoe():
     """Part of the shoreline() storyline. Player chooses canoe. And, then has a choice of going south() or north()"""
 def raft():
