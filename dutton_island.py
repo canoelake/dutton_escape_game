@@ -643,10 +643,49 @@ def run_rapids():
 
 def other_side():
     """Player reaches the other side of river to a town and see's a payphone()."""
-def payphone():
-    """Player get's in payphone and must complete last_boss() to win."""
-def last_boss():
-    """Player has 3 chances to complete challenge to win() or be recaptured()."""
+    loading()
+    print("You've reached to the other side. You are now on the mainland")
+    sleep(1)
+    print("You have one last random challenge that's completly unrelated to storyline..")
+    sleep(4)
+    print("Im thinking of a number between 1 and 10.")
+    sleep(1)
+    print("Guess within 2 digits of the number and you will win")
+    sleep(1)
+    print("If not. You will be recaptured and your sentencing will be handed down.")
+    sleep(3)
+    playerGuess = int(input("What number do you guess: "))
+
+    randomLastChance = random.randint(1,10)
+
+    winNumber1 = randomLastChance
+    winNumber2 = randomLastChance + 2
+    winNumber3 = randomLastChance - 2
+
+    if playerGuess == winNumber1 or playerGuess == winNumber2 or playerGuess == winNumber3:
+        sleep(4)
+        print(f"You guessed {playerGuess}")
+        sleep(2)
+        print("The number that I thought of is:" end=' ')
+        sleep(6)
+        print(randomLastChance)
+        sleep(2)
+        print("Congrats")
+        sleep(2)
+        win(player)
+    else:
+        sleep(4)
+        print(f"You guessed {playerGuess}")
+        sleep(2)
+        print("The number that I thought of is:" end=' ')
+        sleep(6)
+        print(randomLastChance)
+        sleep(2)
+        print("I'm so sorry.")
+        sleep(2)
+        recaptured()
+
+
 def win(player):
     """Winning module"""
     loading()
