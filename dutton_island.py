@@ -2,11 +2,6 @@ import random
 from os import system
 from time import sleep
 from sys import exit
-# player ="test player"
-# crime = "test crime"
-# lawyers_name ="Test lawyer"
-# happy_words = "I am happy"
-# last_words = "This is my last word"
 
 sleep(1)
 print("")
@@ -211,7 +206,7 @@ def the_shoreline(player):
     sleep(1)
     shoreChoice = int(input('Enter 1 or 2: '))
 
-    if shoreChoice != 1 or shoreChoice ! = 2:
+    if shoreChoice != 1 or shoreChoice != 2:
         print('Read the instructions.')
         print('Reloading.............')
         sleep(2)
@@ -543,7 +538,7 @@ def chopper():
     print("HELICOPTER OVERHEAD")
     print("")
     sleep(3)
-    print("There is a chopper overhead. Do you run left or right?)
+    print("There is a chopper overhead. Do you run left or right?")
     sleep(3)
     
     chopperDecider = random.randint(1,2)
@@ -666,7 +661,7 @@ def other_side():
         sleep(4)
         print(f"You guessed {playerGuess}")
         sleep(2)
-        print("The number that I thought of is:" end=' ')
+        print("The number that I thought of is:", end=' ')
         sleep(6)
         print(randomLastChance)
         sleep(2)
@@ -677,7 +672,7 @@ def other_side():
         sleep(4)
         print(f"You guessed {playerGuess}")
         sleep(2)
-        print("The number that I thought of is:" end=' ')
+        print("The number that I thought of is:", end=' ')
         sleep(6)
         print(randomLastChance)
         sleep(2)
@@ -690,6 +685,7 @@ def win(player):
     """Winning module"""
     loading()
     print("")
+
     
     def border_msg(msg):
         msg_lines=msg.split('\n')
@@ -715,7 +711,21 @@ def win(player):
 
 def recaptured():
     """Player is recaptured. A random choice is made whether: death penalty, life, or 15 yrs with paraole in 5."""
-    print("This is recaptured")
+    loading()
+    print("You have been recaptured.")
+    sleep(1)
+    randomSentencing = random.randint(1,6)
+
+    if randomSentencing == 1 or randomSentencing == 3 or randomSentencing == 6:
+        sleep(2)
+        parole()
+    elif randomSentencing == 2 or randomSentencing == 4:
+        sleep(2)
+        life(player)
+    else:
+        sleep(2)
+        death_penalty()
+
 def death_penalty():
     """Death penalty ending storyline"""
     loading()
