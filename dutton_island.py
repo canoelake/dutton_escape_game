@@ -575,6 +575,31 @@ def all_clear(location):
 
 def canoe():
     """Part of the shoreline() storyline. Player chooses canoe. And, then has a choice of going south() or north()"""
+    loading()
+    print("You chose the canoe.")
+    print("")
+    print("Do you want to go: \n1: North \n2: South\n")
+    
+    canoeChoice = int(input("Enter 1 or 2: "))
+
+    if canoeChoice != 1 or canoeChoice != 2:
+        print("Incorrect choice")
+        sleep(1)
+        canoe()
+    elif canoeChoice == 1:
+        print("You chose to go north")
+        sleep(2)
+        run_rapids()
+    elif canoeChoice == 2:
+        print("You're going south")
+        sleep(2)
+        rapids()
+    else:
+        print("Bug in the system")
+        sleep(1)
+        credits()
+    
+
 def raft():
     """Part of the shoreline() storyline. Player chooses raft. And, then has to complete:
     raft_challenge_1(), raft_challenge_2() and raft_challenge_3()"""
