@@ -195,7 +195,7 @@ def the_road(player):
     print("How will you fare?")
     sleep(4)
     random_fate()
-    
+
 def the_shoreline(player):
     """The shoreline storyline. Player finds a canoe() and a raft()"""
     loading()
@@ -421,6 +421,20 @@ def random_fate():
     roadblock(), vehicle(), chopper(), or all_clear()."""
 def roadblock():
     """Player runs into a road block. It's the end of the line. Player will either be shot() or captured()."""
+    loading()
+    roadBlockFate = random.randint(1,2)
+    print("ROAD BLOCK AHEAD")
+    print("")
+    print("There is a road block ahead")
+    sleep(3)
+    print("There is nowhere to run or hide.")
+    sleep(3)
+
+    if roadBlockFate == 1:
+        shot(last_words)
+    else:
+        captured()
+
 def shot(last_words):
     """Player is shot"""
     loading()
@@ -446,14 +460,20 @@ def shot(last_words):
 
 def captured():
     """Player is captured"""
+    loading()
+    print("THE END OF THE LINE")
+    print("")
+    print("Get down on the ground now.")
+    sleep(3)
+    print("You are surrounded")
+    sleep(2)
+    print("You are recaptured")
+    sleep(4)
+    recaptured()
+
 def vehicle():
     """Player encounters a vehicle and random_vehicle() module is called to determine fate."""
-def random_vehicle():
-    """This module will decide if the vehicle is driven by friend() or foe()"""
-def foe():
-    """If vehicle is driven by foe call roadblock() and pass message"""
-def friend():
-    """Friendly character encountered. Player is driven to shoreline()."""
+
 def chopper():
     """A chopper starts flying overhead. Call chopper_chance()"""
 def chopper_chance():
