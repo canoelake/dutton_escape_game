@@ -98,13 +98,9 @@ def escape_day(player, lawyers_name):
     sleep(3)
     loading()
     print("The door is open and there is no one else around.")
+    print("")
     sleep(3)
-    print("It looks like there are 4 paths that you could take.")
-    print("1: THE WOODS")
-    print("2: THE BRIDGE")
-    print("3: THE ROAD")
-    print("4: THE SHORELINE")
-    sleep(5)
+  
     escape_choice(player, lawyers_name)
 
 def escape_choice(player, lawyers_name):
