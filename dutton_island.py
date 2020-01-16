@@ -168,12 +168,34 @@ def the_bridge(player):
     """The bridge escape storyline. One of four random_fate() will be chosen for the player"""
     loading()
     location = "the bridge"
-    print("The Bridge")
+    print("THE BRIDGE")
+    print("")
+    sleep(1)
+    print("You've arrived at the bridge")
+    sleep(1.3)
+    print("You slowly get closer")
+    sleep(3)
+    print("Is the way clear?")
+    sleep(3.5)
+    random_fate()
+
 def the_road(player):
     """The road storyline. One of four random_fate() will be chosen for the player."""
     loading()
     location = "the road"
-    print("The Road")
+    print("THE ROAD")
+    print("")
+    sleep(1)
+    print("You've been walking on the road for the last 3 hours.")
+    sleep(3)
+    print("There has been very few cars. However, you'll dart into the bushes if you see one.")
+    sleep(3)
+    print("The road ahead is wide open with very few places to hide.")
+    sleep(3)
+    print("How will you fare?")
+    sleep(4)
+    random_fate()
+    
 def the_shoreline(player):
     """The shoreline storyline. Player finds a canoe() and a raft()"""
     loading()
