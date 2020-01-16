@@ -197,7 +197,7 @@ def the_shoreline(player):
     print("THE SHORELINE")
     print("")
     sleep(2)
-    print("You arrive at the shoreline and you see a conoe and a raft.")
+    print("You arrive at the shoreline and you see a canoe and a raft.")
     sleep(3)
     
     print("Which one do you choose?")
@@ -205,12 +205,8 @@ def the_shoreline(player):
     sleep(1)
     shoreChoice = int(input('Enter 1 or 2: '))
 
-    if shoreChoice != 1 or shoreChoice != 2:
-        print('Read the instructions.')
-        print('Reloading.............')
-        sleep(2)
-        the_shoreline(player)
-    elif shoreChoice == 1:
+    
+    if shoreChoice == 1:
         sleep(2)
         canoe()
     elif shoreChoice == 2:
@@ -576,11 +572,8 @@ def canoe():
     
     canoeChoice = int(input("Enter 1 or 2: "))
 
-    if canoeChoice != 1 or canoeChoice != 2:
-        print("Incorrect choice")
-        sleep(1)
-        canoe()
-    elif canoeChoice == 1:
+   
+    if canoeChoice == 1:
         print("You chose to go north")
         sleep(2)
         run_rapids()
