@@ -473,12 +473,48 @@ def captured():
 
 def vehicle():
     """Player encounters a vehicle and random_vehicle() module is called to determine fate."""
+    loading()
+    vehicleDecider = random.randint(1,2)
+    print("VEHICLE AHEAD")
+    print("")
+    sleep(3)
+    print("There is a vehicle approaching ahead. They have seen you. There is nowhere to hide")
+    sleep(5)
+    
+    if vehicleDecider == 1:
+        print("You start to run. But you see that there is a car behind and a roadblock ahead.")
+        sleep(4)
+        roadblock()
+    else:
+        print("As the car approaches, you notice that it is the security guard.")
+        sleep(3)
+        print("He's reluctant. But, he decides to take you to the shoreline.")
+        sleep(5)
+        the_shoreline(player)
 
 def chopper():
-    """A chopper starts flying overhead. Call chopper_chance()"""
-def chopper_chance():
-    """In this module player has to guess a number and if within 1 digit of the number,
-    player gets to go back to woods(); or else player gets chased into roadblock()"""
+    """A chopper starts flying overhead."""
+    loading()
+    print("HELICOPTER OVERHEAD")
+    print("")
+    sleep(3)
+    print("There is a chopper overhead. Do you run left or right?)
+    sleep(3)
+    
+    chopperDecider = random.randint(1,2)
+    chopperChoice = int(input("1. Left    2. Right: "))
+
+    if chopperChoice == chopperDecider:
+        print("You start running back towards the woods")
+        sleep(4)
+        hunters()
+    else:
+        print("They chase you towards the roadblock")
+        sleep(3)
+        roadblock()
+    
+
+
 def all_clear(location):
     """All is clear for player.  module calls shoreline()"""
     loading()
