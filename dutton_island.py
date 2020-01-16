@@ -349,11 +349,11 @@ def lie(player):
         lie(player)
 
 def death_in_woods(last_words):
-    """Player dies in woods"""
+    """Player dies - repurposed for any death"""
     loading()
     print("Everything goes dark.")
     sleep(2)
-    print("You are alone now in the woods.")
+    print("You are alone")
     sleep(2)
     print("You feel a warm liquid pouring down your face.")
     sleep(2.5)
@@ -601,19 +601,46 @@ def canoe():
     
 
 def raft():
-    """Part of the shoreline() storyline. Player chooses raft. And, then has to complete:
-    raft_challenge_1(), raft_challenge_2() and raft_challenge_3()"""
-def go_south():
-    """Player decides to go south"""
-def go_north():
-    """Player decides to go north"""
+    """Part of the shoreline() storyline. Player chooses raft. """
+    loading()
+    print("RAFTING")
+    print("")
+    sleep(1)
+    print("While rafting you come upon some rapids and you have no choice but to run them.")
+    sleep(4)
+    run_rapids()
+
 def rapids():
-    """Player sees rapids ahead and must decide quickly whether to run_rapids() or portage_rapids()"""
-def portage_rapids():
-    """Player decides to portage. If a random number between 1 and 5, player meets hunters(), else reach other_side()."""
+    """Player sees rapids ahead"""
+    loading()
+    print("You see rapids ahead. But you vessel is sturdy enough")
+    print("")
+    sleep(3.4)
+    other_side()
+
+
 def run_rapids():
     """Player decides to run the rapids. If a random number between 1 and 3, player collapse() and dies, 
     else reach other_side()."""
+    loading()
+    rapidsClassRandom = random.randint(1,6)
+    print("If the rapid is a class 5 or 6 - you will not survive.")
+    sleep(2)
+    print("Calculating rapid class...................")
+    sleep(5)
+    print("")
+    print(f"This is a class {rapidsClassRandom} rapid")
+
+    if rapidsClassRandom != 5 or rapidsClassRandom != 6:
+        print("Great")
+        sleep(3)
+        other_side()
+    else:
+        print("I'm so sorry")
+        sleep(3)
+        death_in_woods(last_words)
+   
+
 def other_side():
     """Player reaches the other side of river to a town and see's a payphone()."""
 def payphone():
@@ -683,12 +710,7 @@ def parole():
     sleep(3)
     credits()
 
-def raft_challenge_1():
-    """First of 3 challenges for choosing to raft. If fail call collapse()"""
-def raft_challenge_2():
-    """Second of 3 challenges for choosing to raft. If fail call collapse()"""
-def raft_challenge_3():
-    """Last raft challenge. Completing gets player to other_side(). Failure, too close to shore, recaptured()."""
+
 def credits():
     print("")
     print("Escape from Dutton Island")
