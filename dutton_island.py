@@ -39,6 +39,7 @@ def welcome(player, lawyers_name):
     print(f"{lawyers_name}: Hey, {player} ! \n{lawyers_name}: I know you've been wrongfully imprisoned for 5 years on Dutton Island")
     sleep(4)
     print(f"{player}: Listen {lawyers_name}, you know that I was framed. I'm losing my mind in here! How's the final appeal coming?")
+    sleep(2)
     print(f"{lawyers_name}: I'm sorry {player}, It looks like you will be executed in a week.")
     sleep(3)
     print(f"{player}: What do you mean?")
@@ -56,9 +57,11 @@ def welcome(player, lawyers_name):
     print(f"Guard: Visiting time is over!")
     sleep(3)
     print(f"{lawyers_name}: Tomorrow, during your work placement. I've paid one of the guards to leave the door open.")
+    sleep(1)
     print("Once the way is clear. come closer. Take the.....")
-    sleep(5.2)
+    sleep(4)
     print(f"Guard: That's it guys. Time's Up. {player}, back to your cell.")
+    sleep(3)
     print("")
     print("END OF SCENE 1")
     
@@ -71,7 +74,7 @@ def welcome(player, lawyers_name):
     
 
     # checks for user input if they want to proceed
-    proceed = input("Do you want to proceed? ")
+    proceed = input("Do you want to proceed? (Y/N) ")
     if proceed == "Y" or proceed == "y":
         print(f"Good Luck {player}!")
         sleep(1.2)
@@ -124,11 +127,11 @@ def escape_choice(player, lawyers_name):
     if choice == 1 :
         the_woods()
     elif choice == 2 :
-        the_bridge()
+        the_bridge(player)
     elif choice == 3 :
-        the_road()
+        the_road(player)
     elif choice == 4:
-        the_shoreline
+        the_shoreline(player)
     else:
         print("Sleep it off and try again later")
         sleep(3)
